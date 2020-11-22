@@ -21,11 +21,13 @@ With the LPC1768 and the MCP2551 CAN transceiver on the breadboard, connect the 
 |  LPC1768   | MCP2551 |
 |------------|---------|
 | 5V USB Out (VU) |   VCC   |
-|    GND     	  |   GND   |
-|   CAN TD        |   CTX   |
-|   CAN RD        |   CRX   |
+|    GND     (GND)|   GND   |
+|   CAN TD   (p30)|   CTX   |
+|   CAN RD   (p29)|   CRX   |
 
-Next, we need to connect the Tactio node to the system with the pinout below. The CANH line on the node is connected to the CANH line on the transceiver, the CANL likewise is connected. Lastly, GND for the node is connected to the sytem's ground line, and the VCC connection is connected to the main power line, be it the 5V USB Out from the LPC, or an external power supply.
+Next, we need to connect the Tactio node to the system with the pinout below. The CANH line on the node is connected to the CANH line on the transceiver; the CANL is connected likewise. GND for the node is connected to the system's ground line. Finally, the VCC connection of the breakout is connected to the main input power line, be it the 5V USB out from the LPC, or an external 5V power supply. Be careful that the node is only supplied with 5V. Much higher voltage level will damage it and with less it will not function correctly.
+
+Add the terminating resistors across CANH and CANL on both the breadboard and on the final node in the chain to ensure proper functioning of the CAN Bus network. 
 
 ![Tactio node pinout](pinout.png)
 
