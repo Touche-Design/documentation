@@ -2,7 +2,8 @@ USB Serial Protocol
 ===================
 
 The network controller firmware communicates with a PC over a simple USB serial protocol. This protocol is implemented by the PyTactio library, but it is documented below for creating separate implementations. All messages are transmitted in exactly the byte order written below.
-All communication is at 230400 Baud rate, 8N1 (8 Data bits, No Parity bit, 1 Stop bit).
+
+All communication is done over USB serial at 230400 baud, 8N1 (8 data bits, no parity bits, 1 stop bit).
 
 Messages From the Controller to the PC
 --------------------------------------
@@ -24,4 +25,4 @@ Messages From the PC to the Controller
 |Message name|Data|Notes|
 |------------|----|-----|
 |All known addresses|0xFF 0b01010000 <number of addresses `N`> `N`\*<8 bit address>|The third byte is the number of addresses the controller knows about. After the third byte, every address is sent verbatim as a single unsigned 8-bit integer.|
-|Sensor data at address|0xFF 0b0100<4-bit bitmask of whether the corresponding row's data is valid> <8 bit address> <8 bytes of row 4 data> <8 bytes of row 3 data> <8 bytes of row 2 data> <8 bytes of row 1 data>|The bitmask has bits of 0 when the data is known to be invalid. Each row's data is transmitted in four pairs of two bytes: 0bABC0xxxx xxxxxxxx 0b0000xxxx xxxxxxxx 0b0000xxxx xxxxxxxx 0b0000xxxx xxxxxxxx. Bit `A` is 1 if bias calibration was enabled for that measurement. Bit `B` is 1 if intercept calibration was enabled. Bit `C` is 1 if slope calibration was enabled. The `x` bits are the 12 bit data from the sensor. The sensor data for all sensors in the array is sent ever 100ms (found in tactnet.hpp)|
+|Sensor data at address|0xFF 0b0100<4-bit bitmask of whether the corresponding row's data is valid> <8 bit address> <8 bytes of row 4 data> <8 bytes of row 3 data> <8 bytes of row 2 data> <8 bytes of row 1 data>|The bitmask has bits of 0 when the data is known to be invalid. Each row's data is transmitted in four pairs of two bytes: 0bABC0xxxx xxxxxxxx 0b0000xxxx xxxxxxxx 0b0000xxxx xxxxxxxx 0b0000xxxx xxxxxxxx. Bit `A` is 1 if bias calibration was enabled for that measurement. Bit `B` is 1 if intercept calibration was enabled. Bit `C` is 1 if slope calibration was enabled. The `x` bits are the 12 bit data from the sensor. The sensor data for all known sensors is automatically sent every 100ms.|
