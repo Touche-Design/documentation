@@ -1,4 +1,4 @@
-# documentation
+# Documentation
 Connecting a Tactio node to a PC requires an intermediary device to bridge the CAN Tactio network to a common PC interface like USB. This walkthrough will show how to assemble such a system on a breadboard with an mbed LPC1768 as an intermediary along with a CAN transceiver.
 
 ## Required materials:
