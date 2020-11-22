@@ -2,6 +2,7 @@ USB Serial Protocol
 ===================
 
 The network controller firmware communicates with a PC over a simple USB serial protocol. This protocol is implemented by the PyTactio library, but it is documented below for creating separate implementations. All messages are transmitted in exactly the byte order written below.
+All communication is at 230400 Baud rate, 8N1 (8 Data bits, No Parity bit, 1 Stop bit).
 
 Messages From the Controller to the PC
 --------------------------------------
