@@ -32,7 +32,7 @@ For any additional information on wiring or electrical design, the schematics fo
 
 ## Network Controller Firmware 
 
-In order for the Network Controller to function, it requires custom firmware. The mbed LPC1768 was the target device, with the firmware binary available in the `net_controller_firmware` folder *TODO*.
+In order for the Network Controller to function, it requires custom firmware. The mbed LPC1768 was the target device, with the firmware binary available in the `net_controller_firmware` folder.
 
 ## Software 
 
