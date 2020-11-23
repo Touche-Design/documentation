@@ -46,4 +46,4 @@ In order to visualize the sensor information, the [Tactio visualization software
 ```bash
 python3 MultiSensorVis.py
 ```
-To incorporate Tactio into your own project, you can utilize the PyTactio library to handle the communications. The communications protocol is documented in the [USB Serial Protocol](https://github.com/Touche-Design/documentation/blob/main/USB Serial Protocol.md) file.
+To incorporate Tactio into your own project, you can utilize the PyTactio library to handle the communications. The communications protocol is documented in the [USB Serial Protocol](https://github.com/Touche-Design/documentation/blob/main/USB%20Serial%20Protocol.md) file.
